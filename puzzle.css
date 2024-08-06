@@ -14,7 +14,7 @@ body {
     height: 360px;
     background-color: lightblue;
     border: 10px solid #0c67ae;
-    
+
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -22,3 +22,11 @@ body {
 /* [display:flex] & [flex-wrap: wrap] is going to make sure that
 the tiles go from left and right and fill up the width
 instead of stacking in a single column*/
+
+#board img{
+    width: 118px;
+    /* because of border-left 1px and border-right 1px, 
+    we need to subtract 2 from width= 120px */
+    height: 118px;
+    border: 1px solid #0c67ae;  
+}
