@@ -8,10 +8,6 @@ https://leslieyjkim.github.io/Slide_Puzzle_3x3/
 Welcome to the Slide Puzzle Web Application! This project is a classic sliding puzzle game implemented using HTML, CSS, and JavaScript. The game challenges players to rearrange a grid of numbered tiles to achieve a specific order by sliding tiles into an adjacent empty space.
 
 
-## Tutorial
-https://www.youtube.com/watch?v=sD3Os4H_EOU
-
-
 ## Features
 
 - **Interactive Gameplay**: Click on tiles to slide them into the empty space, following the classic sliding puzzle mechanics.
@@ -42,3 +38,8 @@ We have exciting plans to further develop and enhance the Slide Puzzle Web Appli
 - Sound Effects and Animations: Enhance the user experience with sound effects and animations for tile movements.
 - Mobile Optimization: Further optimize the application for mobile devices to ensure a smooth and responsive experience on all screen sizes.
 - Accessibility Improvements: Make the application more accessible by adding keyboard controls and improving compatibility with screen readers.
+
+
+
+## Tutorial 
+https://www.youtube.com/watch?v=sD3Os4H_EOU
