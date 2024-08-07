@@ -8,7 +8,19 @@ var otherTile; //reference the target tile you want to swap with
 
 var turns = 0; //turns is initialized to 0 to keep track of the number of moves made.
 
+//var imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+//Now scramble and shuffle the orders.
+// Fisher-Yates shuffle algorithm to randomize imgOrder array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+}
+
 var imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+shuffleArray(imgOrder); // Randomly shuffle the imgOrder array
+
 
 
 
