@@ -82,6 +82,11 @@ function dragDrop() {
 
 //afterwards, here is when we swap.
 function dragEnd() {
+    //Add condition : swap only with the empty tile(3.jpg)
+    if(!otherTile.src.includes("3.jpg")) {
+        return; //so, if the tile has 3.jpg this function will stop here. not swapping under below codes.
+    }
+
 
     let currCoords = currTile.id.split("-"); //ex) "0-0" -> ["0", "0"]
     let r = parseInt(currCoords[0]);
