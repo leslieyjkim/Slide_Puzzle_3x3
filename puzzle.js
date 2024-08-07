@@ -113,6 +113,10 @@ function dragEnd() {
        otherTile.src = currImg;
            //So, we're not really swapping positions of tiles
            //instead we're swapping their images.
+
+       //Now, we need to increment the # of turns
+       turns += 1;
+       document.getElementById("turns").innerText = turns;
     }
 
 }
