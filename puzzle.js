@@ -37,21 +37,56 @@ window.onload = function() {
             tile.src = "./images/" + imgOrder.shift() + ".jpg";
             //ex: src = "1.jpg"
 
+
+            //DRAG DROP functionality : we need to add several event-listeners.
+            tile.addEventListener("dragstart", dragStart); //click an image to drag
+            tile.addEventListener("dragover", dragOver);   //moving image around while clicked
+            tile.addEventListener("dragenter", dragEnter); //dragging image onto another one
+            tile.addEventListener("dragleave", dragLeave); //dragged image leave another image
+            tile.addEventListener("drop", dragDrop);       //drag an image over another image, drop and let go the image
+            tile.addEventListener("dragend", dragEnd);     //after drag drop, swap the two tiles
+
+
+
             document.getElementById("board").append(tile);
             //which means, we take this tag "id="0-0", src="1.jpg",
             //and insert it in board. repeated 9 times because we have 9 pieces. 
             // <img id="0-0" src="1.jpg">
             // <img id="0-1" src="2.jpg">
-            // <img id="0-2" src="3.jpg">
-            // <img id="1-0" src="4.jpg">
-            // <img id="1-1" src="5.jpg">
-            // <img id="1-2" src="6.jpg">
-            // <img id="2-0" src="7.jpg">
-            // <img id="2-1" src="8.jpg">
-            // <img id="2-2" src="9.jpg">
+            // <img id="0-2" src="3.jpg">.... etc.
             // We don't need to write whole these codes, so we put for loop instead.
-
-
         }
     }
+}
+
+
+function dragStart() {
+    currTile = this; //this refers to the img tile being dragged
+}
+
+function dragOver(e) {
+    e.preventDefault();
+}
+
+function dragEnter(e) {
+    e.preventDefault();
+}
+
+function dragLeave() {
+
+}
+
+function dragDrop() {
+    otherTile = this; //this refers to the img tile being dropped on
+}
+
+//afterwards, here is when we swap.
+function dragEnd() {
+    let currImg = currTile.src;
+    let otherImg = otherTile.src;
+
+    currTile.src = otherImg;
+    otherTile.src = currImg;
+    //So, we're not really swapping positions of tiles
+    //instead we're swapping their images.
 }
