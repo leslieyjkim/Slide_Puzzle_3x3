@@ -82,11 +82,32 @@ function dragDrop() {
 
 //afterwards, here is when we swap.
 function dragEnd() {
-    let currImg = currTile.src;
-    let otherImg = otherTile.src;
 
-    currTile.src = otherImg;
-    otherTile.src = currImg;
-    //So, we're not really swapping positions of tiles
-    //instead we're swapping their images.
+    let currCoords = currTile.id.split("-"); //ex) "0-0" -> ["0", "0"]
+    let r = parseInt(currCoords[0]);
+    let c = parseInt(currCoords[1]);
+
+    let otherCoords = otherTile.id.split("-");
+    let r2 = parseInt(otherCoords[0]);
+    let c2 = parseInt(otherCoords[1]);
+
+    //To check adjacency, we need to check for left / right/ up and down.
+    let moveLeft = r == r2 && c2 == c-1; //in the same row / column move to left
+    let moveRight = r == r2 && c2 == c+1;
+    let moveUp = c == c2 && r2 == r-1;
+    let moveDown = c == c2 && r2 == r+1;
+
+    let isAdjacent = moveLeft || moveRight || moveUp || moveDown;
+
+    //if it is adjacent, then we swap.
+    if (isAdjacent) {
+       let currImg = currTile.src;
+       let otherImg = otherTile.src;
+
+       currTile.src = otherImg;
+       otherTile.src = currImg;
+           //So, we're not really swapping positions of tiles
+           //instead we're swapping their images.
+    }
+
 }
